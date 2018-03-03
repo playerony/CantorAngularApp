@@ -1,0 +1,10 @@
+<nav>
+    <div>
+        <a href="#!" class="brand-logo" style="padding-left: 10px">Exchange</a>
+        <ul>
+            <li *ngIf="!logged"><a [routerLink]="['/login']">Zaloguj się</a></li>
+            <li *ngIf="logged" [routerLink]="['/edit-user']"><a>Moje konto</a></li>
+            <li *ngIf="logged"><a (click)="logout()">Wyloguj się</a></li>
+        </ul>
+    </div>
+</nav>
