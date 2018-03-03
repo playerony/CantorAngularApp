@@ -1,0 +1,39 @@
+<div *ngIf="user">
+    <h3>Edit your profile:</h3>
+    <form [formGroup]="userForm" (ngSubmit)="submit()">
+        <input type="hidden" formControlName="id">
+        <div>
+          <label for="username">Login</label>
+          <input type="text" name="username" id="username" formControlName="username">
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" formControlName="password">
+        </div>
+
+        <div>
+          <label for="firstName">First Name</label>
+          <input type="text" name="firstName" id="firstName" formControlName="firstName">
+        </div>
+
+        <div>
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" id="lastName" formControlName="lastName">
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" formControlName="email">
+        </div>
+
+        <div>
+          <label for="balance">Balance</label>
+          <input type="number" name="balance" id="balance" formControlName="balance">
+        </div>
+
+        <div>
+          <button [disabled]="!userForm.valid">Save</button>
+        </div>
+    </form>
+</div>
