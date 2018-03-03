@@ -1,4 +1,4 @@
-<h4>Zaloguj się</h4>
+<h4>Login</h4>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div>
         <label for="username">Login</label>
@@ -6,9 +6,9 @@
         <p *ngIf="(username.touched && username.invalid)">Login cannot be empty</p>
     </div>
     <div>
-        <label for="password">Hasło</label>
+        <label for="password">Password</label>
         <input type="password" name="password" id="password" formControlName="password">
-        <p *ngIf="(password.touched && password.invalid)" class="red-text lighten-2">Hasło nie może być puste</p>
+        <p *ngIf="(password.touched && password.invalid)">Password cnnot be empty</p>
     </div>
     <div>
         <button [disabled]="!loginForm.valid">Login</button>
