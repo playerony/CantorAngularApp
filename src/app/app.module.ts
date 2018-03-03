@@ -7,6 +7,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { EditComponent } from './edit/edit.component';
+import { CurrenciesComponent } from './currencies/currencies.component';
+import { CurrencyDetailsComponent } from './currency-details/currency-details.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { EditComponent } from './edit/edit.component';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    EditComponent
+    EditComponent,
+    CurrenciesComponent,
+    CurrencyDetailsComponent
   ],
   imports: [
     BrowserModule
