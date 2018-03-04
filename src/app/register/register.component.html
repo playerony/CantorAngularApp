@@ -1,0 +1,47 @@
+<div>
+    <h3>Register form</h3>
+    <form [formGroup]="userForm" (ngSubmit)="submit()">
+        <input type="hidden" formControlName="id">
+        <div>
+            <label for="username">Login</label>
+            <input type="text" name="username" id="username" formControlName="username">
+            <p *ngIf="(username.touched && username.invalid)">Login cannot be empty</p>
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" formControlName="password">
+            <p *ngIf="(password.touched && password.invalid)">Password cannot be empty</p>
+        </div>
+
+        <div>
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" id="firstName" formControlName="firstName">
+            <p *ngIf="(firstName.touched && firstName.invalid)">First Name cannot be empty</p>
+        </div>
+
+        <div>
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" id="lastName" formControlName="lastName">
+            <p *ngIf="(lastName.touched && lastName.invalid)">Last Name cannot be empty</p>
+        </div>
+
+        <div>
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" formControlName="email">
+            <p *ngIf="(email.touched && email.invalid)">E-mail cannot be empty</p>
+        </div>
+
+        <div>
+            <label for="balance">Balance</label>
+            <input type="number" name="balance" id="balance" formControlName="balance">
+        </div>
+
+        <div>
+            <button [disabled]="!userForm.valid">Register</button>
+        </div>
+    </form>
+    <div>
+        <button (click)="redirectToLoginPage()">Back to login page</button>
+    </div>
+</div>

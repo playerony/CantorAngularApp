@@ -16,6 +16,7 @@ import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from '../routes';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { appRoutes } from '../routes';
     CurrenciesComponent,
     CurrencyDetailsComponent,
     UserCurrencyDetailsComponent,
-    UserCurrencyComponent
+    UserCurrencyComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
