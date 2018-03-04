@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from '../routes';
 import { RegisterComponent } from './register/register.component';
+import { UserPanelComponent } from './user-panel/user-panel.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { RegisterComponent } from './register/register.component';
     CurrencyDetailsComponent,
     UserCurrencyDetailsComponent,
     UserCurrencyComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserPanelComponent
   ],
   imports: [
     BrowserModule,
