@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Currency } from '../models/currency.model';
 import { UserCurrency } from '../models/userCurrency.model';
 import { ActivatedRoute } from '@angular/router';
@@ -11,12 +11,13 @@ import { UserCurrencyService } from '../services/userCurrency.service';
     selector: 'app-currency-details',
     templateUrl: './currency-details.component.html',
     styleUrls: ['./currency-details.component.css'],
-    providers: [UserCurrencyService]
+    providers: [UserCurrencyService],
 })
 export class CurrencyDetailsComponent implements OnInit {
     private userId: number
+    @Input() private currency: Currency
 
-    constructor(private currency: Currency, private userCurrencyService: UserCurrencyService, 
+    constructor(private userCurrencyService: UserCurrencyService,
                 private formBuilder: FormBuilder, private router: Router) { }
 
     ngOnInit() {
