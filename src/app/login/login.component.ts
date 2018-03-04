@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
         const token = localStorage.getItem('token');
 
         if (token && jwtHelper.decodeToken(token).role && !jwtHelper.isTokenExpired(token))
-            this.router.navigate(['/wallet']);
+            this.router.navigate(['/currencies']);
 
         this.loginForm = this.formBuilder.group({
           username: new FormControl('', [Validators.required]),
