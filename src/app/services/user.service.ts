@@ -34,6 +34,11 @@ export class UserService {
                         .map((res: Response) => res.json())
     }
 
+    updateUser(user: User, id: number): Observable<any> {
+        return this.http.put(this.apiUrl + '/' + id, user, this.requestOptions)
+                        .map((res: Response) => res.json())
+    }
+
     removeUser(id: number) {
         return this.http.delete(this.apiUrl + '/' + id, this.requestOptions)
                         .map((res: Response) => res.json())
