@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserCurrency } from '../models/userCurrency.model';
 import { UserCurrencyService } from '../services/userCurrency.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,7 +14,7 @@ import { JwtHelper } from 'angular2-jwt';
     providers: [UserCurrencyService, CurrenciesService]
 })
 export class UserCurrencyDetailsComponent implements OnInit {
-    private userCurrency: UserCurrency
+    @Input() userCurrency: UserCurrency
     private userId: number
     private currencies: Currencies
 
@@ -23,25 +23,18 @@ export class UserCurrencyDetailsComponent implements OnInit {
 
     ngOnInit() {
         this.route.params.subscribe(params => {
-            const id = params['id']
-            if(id) {
-                this.userCurrencyService.fetchUserCurrency(id).subscribe((data: any) => {
-                    this.userCurrency = data
-                })
+            this.currenciesService.fetchCurrencies().subscribe((data: any) => {
+                this.currencies.publicationDate = data.publicationDate
+                this.currencies.items = data.items
+            })
 
-                this.currenciesService.fetchCurrencies().subscribe((data: any) => {
-                    this.currencies.publicationDate = data.publicationDate
-                    this.currencies.items = data.items
-                })
+            let element = this.currencies.items.map(arr => {
+                arr.code == this.userCurrency.currencyCode
+            })
 
-                let element = this.currencies.items.map(arr => {
-                    arr.code == this.userCurrency.currencyCode
-                })
-
-                for(let i=0 ; i<this.currencies.items.length ; i++) {
-                    if(this.currencies[i].code == this.userCurrency.currencyCode) {
-                        this.userCurrency.sellPrice = this.currencies[i].sellPrice
-                    }
+            for(let i=0 ; i<this.currencies.items.length ; i++) {
+                if(this.currencies[i].code == this.userCurrency.currencyCode) {
+                    this.userCurrency.sellPrice = this.currencies[i].sellPrice
                 }
             }
         })
