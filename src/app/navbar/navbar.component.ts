@@ -7,7 +7,7 @@ import { JwtHelper } from 'angular2-jwt'
     styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-    private logged: boolean
+    logged: boolean
 
     constructor() { 
       
