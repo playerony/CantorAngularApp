@@ -11,6 +11,11 @@ import { CurrenciesComponent } from './currencies/currencies.component';
 import { CurrencyDetailsComponent } from './currency-details/currency-details.component';
 import { UserCurrencyDetailsComponent } from './user-currency-details/user-currency-details.component';
 import { UserCurrencyComponent } from './user-currency/user-currency.component';
+import { LoggedGuard } from './guards/logged.guard';
+import { HttpModule } from '@angular/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from '../routes';
 
 
 @NgModule({
@@ -26,9 +31,12 @@ import { UserCurrencyComponent } from './user-currency/user-currency.component';
     UserCurrencyComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [LoggedGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
