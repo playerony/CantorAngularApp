@@ -3,4 +3,5 @@ export interface UserCurrency {
     userId: number;
     currencyCode: string;
     currencyAmount: number;
+    sellPrice?: number;
 }

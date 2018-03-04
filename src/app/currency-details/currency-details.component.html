@@ -4,8 +4,7 @@
             <thead>
                 <tr>
                     <th>Currency</th>
-                    <th>Unit price</th>
-                    <th>Amount</th>
+                    <th>Unit</th>
                     <th>Value</th>
                     <th>Actions</th>
                 </tr>
@@ -15,11 +14,10 @@
                     <td>{{ currency.code }}</td>
                     <td>{{ currency.unit }}</td>
                     <td>{{ currency.purchasePrice }}</td>
-                    <td>{{ currency.sellPrice * currency.currencyAmount }}</td></td>
                     <td>
                         <input type="submit" 
-                            value="Buy"
-                            (onClick)="buy()" />
+                               value="Buy"
+                               (onClick)="buy()" />
                     </td>
                 </tr>
             </tbody>
