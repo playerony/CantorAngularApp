@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { EditComponent } from './edit/edit.component';
 import { CurrenciesComponent } from './currencies/currencies.component';
 import { CurrencyDetailsComponent } from './currency-details/currency-details.component';
+import { UserCurrencyDetailsComponent } from './user-currency-details/user-currency-details.component';
+import { UserCurrencyComponent } from './user-currency/user-currency.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { CurrencyDetailsComponent } from './currency-details/currency-details.co
     LoginComponent,
     EditComponent,
     CurrenciesComponent,
-    CurrencyDetailsComponent
+    CurrencyDetailsComponent,
+    UserCurrencyDetailsComponent,
+    UserCurrencyComponent
   ],
   imports: [
     BrowserModule

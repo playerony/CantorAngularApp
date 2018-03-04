@@ -1,0 +1,28 @@
+<div *ngIf="userCurrency">
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Currency</th>
+                    <th>Unit price</th>
+                    <th>Amount</th>
+                    <th>Value</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ userCurrency.currencyCode }}</td>
+                    <td>{{ userCurrency.sellPrice }}</td>
+                    <td>{{ userCurrency.currencyAmount }}</td>
+                    <td>{{ currency.sellPrice * currency.currencyAmount }}</td></td>
+                    <td>
+                        <input type="submit" 
+                               value="Sell"
+                               (onClick)="sell()" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
